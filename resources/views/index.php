@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dude Chatbot - Kathmandu University</title>
+    <link rel="stylesheet" href="<?php echo elixir('css/app.css'); ?>">
 </head>
 <body>
     <header class="header pure-menu pure-menu-horizontal">
@@ -32,5 +33,7 @@
             </span>
         </div>
     </div>
+
+    <script src="<?php echo elixir('js/app.js'); ?>"></script>
 </body>
 </html>
