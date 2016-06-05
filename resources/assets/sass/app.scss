@@ -1,5 +1,6 @@
 @import "pure";
 
-.container{
-    background: #EEEEEE;
-}
+@import "components/typography";
+@import "components/container";
+@import "components/chat-history";
+@import "components/chat-container";

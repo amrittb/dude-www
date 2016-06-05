@@ -28,9 +28,9 @@
         </div>
 
         <div class="pure-u-1 app-info">
-            <span class="text--center">
+            <div class="text--center">
                 Made By: Sanjib Raj Acharya
-            </span>
+            </div>
         </div>
     </div>
 
