@@ -2,6 +2,7 @@
 /vendor
 /node_modules
 /bower_components
-/public
+/public/build
+/public/css
+/public/js
 .env
-.env.example
