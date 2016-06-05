@@ -6,13 +6,13 @@ This is a web application which acts as a front-end for 'Dude' Chatbot.
 
 Clone this repo to your machine and inside your cloned repo directory run these commands for installing composer packages.
 
-```
+```bash
 composer install
 ```
 
 Install front-end packages.
 
-```
+```bash
 npm install
 ```
 
@@ -20,13 +20,13 @@ npm install
 
 Run the following command in the terminal.
 
-```
-php -S localhost:80
+```bash
+php -S localhost:80 -t public
 ```
 
 Compiling front-end assets
 
-```
+```bash
 gulp
 ```
 
