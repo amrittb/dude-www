@@ -1,0 +1,50 @@
+.message-box {
+    display: flex;
+    margin: $message-box-padding / 2 0;
+    position: relative;
+
+    & .message {
+        color:#fff;
+        padding: $message-box-padding;
+        border-radius: $message-box-padding / 2;
+        position: relative;
+
+        &:after{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &--sent {
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        & .message{
+            background: $message-box-sent-bg;
+
+            &:after{
+                top: 0;
+                right: -$message-box-arrow-size;
+                border: $message-box-arrow-size solid $message-box-sent-bg;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+    }
+    
+    &--recieved {
+        & .message{
+            background: $message-box-recieved-bg;
+
+            &:after{
+                bottom: 0;
+                left: -$message-box-arrow-size;
+                border: $message-box-arrow-size solid $message-box-recieved-bg;
+                border-left-color: transparent;
+                border-top-color: transparent;
+            }
+        }
+    }
+}

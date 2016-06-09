@@ -1,4 +1,15 @@
-.chat-history{
+.chat-history {
     background: #EEE;
-    height: 90%;
+    position: absolute;
+    bottom: $chat-container-height;
+    top:0;
+    left:0;
+    right:0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__messages {
+        padding: $chat-history-padding $chat-history-padding * 2;
+        position: relative;
+    }
 }

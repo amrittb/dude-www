@@ -1,6 +1,10 @@
 @import "pure";
 
+@import "variables";
+
+@import "components/header";
 @import "components/typography";
 @import "components/container";
 @import "components/chat-history";
 @import "components/chat-container";
+@import "components/message-box";

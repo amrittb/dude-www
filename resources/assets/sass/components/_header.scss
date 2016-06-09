@@ -1,0 +1,15 @@
+.header {
+    background: $header-bg-color;
+
+    .pure-menu-link {
+        color: $header-link-color;
+    }
+
+    .pure-menu-heading {
+        transition: background 0.5s;
+    }
+    
+    .pure-menu-heading:hover {
+        background: darken($header-bg-color,10%);
+    }
+}
