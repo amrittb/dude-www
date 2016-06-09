@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Dude Chatbot - Kathmandu University</title>
@@ -16,24 +16,35 @@
         </div>
 
         <div class="pure-u-1 chat-container">
-            <form class="pure-form">
+            <form class="pure-form" method="post" action="./ask">
                 <fieldset>
                     <legend>Umm! Say Something...</legend>
+                    <legend id="answer">{{ message }}</legend>
 
-                    <input type="text" placeholder="What do you want to know? May be start with a 'Hi'.">
+                    <input v-model='message' name="question" type="text" id="question">
 
-                    <button type="submit" class="pure-button pure-button-primary">Send</button>
+                    <button type="submit" class="pure-button pure-button-primary" id="ask" v-on:click="send">Send</button>
                 </fieldset>
             </form>
         </div>
-
-        <div class="pure-u-1 app-info">
-            <div class="text--center">
-                Made By: Sanjib Raj Acharya
-            </div>
-        </div>
     </div>
 
-    <script src="<?php echo elixir('js/app.js'); ?>"></script>
+<!--    <script src="--><?php //echo elixir('js/app.js'); ?><!--">-->
+<!--        $var vue = new Vue{-->
+<!--            el: "#answer",-->
+<!--            data:{-->
+<!--                message:"Ask me anything!"-->
+<!--            },-->
+<!--            methods: {-->
+<!--                send: {-->
+                    this.answer = <?php echo url('./ask'); ?>
+//                }
+//            }
+//        }
+//    </script>
+
+
+
+
 </body>
 </html>

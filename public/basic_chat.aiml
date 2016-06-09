@@ -1,0 +1,32 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Hello Sanjib!<br />
+	Can I know your name.
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HOW ARE YOU</pattern>
+        <template>
+            I'm a bot, silly!
+        </template>
+    </category>
+     <category>
+       <pattern>WHO ARE YOU</pattern>
+        <template>
+            Well, Sanjib named me DUDE.
+        </template>
+    </category>
+    <category>
+        <pattern>BYE</pattern>
+        <template>
+            Goodbye, see you next time.
+        </template>
+    </category>
+
+
+</aiml>

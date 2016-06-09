@@ -22,6 +22,8 @@ class pythonCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $question = $input->getOption('question');
+
     }
 
 }
