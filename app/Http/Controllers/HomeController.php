@@ -9,17 +9,20 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
 
-class HomeController extends Controller{
+class HomeController extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
         return view('index');
     }
 
-    public function ask(Request $request){
+    public function ask(Request $request)
+    {
         $question = $request->input('question');
 
         $txt = "print kernel.respond(\"$question\")";
-        $botfile = file_put_contents('bot.py', $txt.PHP_EOL, FILE_APPEND);
+        $botfile = file_put_contents('bot.py', $txt . PHP_EOL, FILE_APPEND);
 
         $process = new Process('python bot.py');
         $process->run();
@@ -40,19 +43,20 @@ class HomeController extends Controller{
     }
 
 
-    public function undoChange($filename, $change){
+    public function undoChange($filename, $change)
+    {
         $out = array();
         $data = file($filename);
 
-        foreach($data as $line){
-            if(trim($line) != $change) {
-               $out[] = $line;
+        foreach ($data as $line) {
+            if (trim($line) != $change) {
+                $out[] = $line;
             }
         }
 
-        $fp = fopen($filename,"w+");
+        $fp = fopen($filename, "w+");
         flock($fp, LOCK_EX);
-        foreach($out as $line){
+        foreach ($out as $line) {
             fwrite($fp, $line);
         }
 
@@ -60,12 +64,4 @@ class HomeController extends Controller{
         fclose($fp);
     }
 
-    public function createApplication(){
-
-        $command = new pythonCommand();
-
-        $application  = new Application('chatbot','1.0.0');
-        $application->add($command);
-        $application->run();
-    }
 }
