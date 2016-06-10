@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+
+<category>
+<pattern>What sorts of academics does ku have?</pattern>
+  <template>
+      KU has numerous academics as engineering ,Medical, Management,Arts and science
+  </template>
+</category>
+
+<category>
+        <pattern>* DRESS CODE</pattern>
+        <template>
+            No there is no dress code in KU.
+        </template>
+</category>
+
+<category>
+        <pattern>How hard is it to be an engineer?</pattern>
+        <template>
+            Well, its hard and fun at the same time.
+            which part do you want to hear first?
+        </template>
+</category>
+
+  <category>
+        <pattern>When is the entrance in KU going to held?</pattern>
+        <template>
+              here you go!
+        </template>
+    </category>
+
+<category>
+        <pattern>When was Ku established?</pattern>
+        <template>
+            Well, hello!
+        </template>
+    </category>
+
+    <category>
+        <pattern>how is grading policy in KU?</pattern>
+        <template>
+           Grading ion KU is Gpa based.
+           At the end of each semester gpa comes.
+        </template>
+    </category>
+
+
+
+<!-- basic_chat.aiml -->
+    <category>
+      <pattern>Can we get a room in a Ku hostel?</pattern>
+        <template>
+            sure you can but you would rather visit this site for further information
+            by clicking this text
+            <a src="http://ku.edu.np/"> </a>
+        </template>
+    </category>
+
+
+
+    <category>
+        <pattern>What is the motto of KU?</pattern>
+        <template>
+            The motto of Ku is "Quality Education for the leadership"
+        </template>
+    </category>
+
+
+
+  <category>
+        <pattern>where can i read stories about students life in ku?</pattern>
+        <template>
+            <a src="http://ku.edu.np/students.php"> You better click me </a>
+        </template>
+    </category>
+
+
+
+  <category>
+        <pattern>How is accomodation in KU?</pattern>
+        <template>
+          It is kinda affordable
+          fooding and rents are reasonable and cheap.
+        </template>
+    </category>
+
+
+
+<category>
+        <pattern>is there free wifi in KU for students?</pattern>
+        <template>
+            of course
+            Wifi is free in library.
+            Also we can access to department wifi.
+        </template>
+    </category>
+
+</aiml>
+
