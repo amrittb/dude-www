@@ -4,8 +4,7 @@
     <category>
         <pattern>HELLO</pattern>
         <template>
-            Hello Sanjib!<br />
-	Can I know your name.
+            Hello there!<br />
         </template>
     </category>
     
@@ -18,7 +17,7 @@
      <category>
        <pattern>WHO ARE YOU</pattern>
         <template>
-            Well, Sanjib named me DUDE.
+            Well, they named me DUDE.
         </template>
     </category>
     <category>

@@ -2,7 +2,7 @@
 <aiml version="1.0">
 
 <category>
-<pattern>What sorts of academics does ku have?</pattern>
+  <pattern>* ACADEMICS DOES KU HAVE</pattern>
   <template>
       KU has numerous academics as engineering ,Medical, Management,Arts and science
   </template>
@@ -16,7 +16,7 @@
 </category>
 
 <category>
-        <pattern>How hard is it to be an engineer?</pattern>
+        <pattern>HOW DOES IT FEEL TO BE AN ENGINEER</pattern>
         <template>
             Well, its hard and fun at the same time.
             which part do you want to hear first?
@@ -24,21 +24,21 @@
 </category>
 
   <category>
-        <pattern>When is the entrance in KU going to held?</pattern>
+        <pattern>* ENTRANCE EXAM GOING TO BE HELD</pattern>
         <template>
-              here you go!
+              <a href="http://ku.edu.np">KU Website</a>
         </template>
     </category>
 
 <category>
-        <pattern>When was Ku established?</pattern>
+        <pattern>* KU ESTABLISHED</pattern>
         <template>
             Well, hello!
         </template>
     </category>
 
     <category>
-        <pattern>how is grading policy in KU?</pattern>
+        <pattern>HOW IS GRADING POLICY IN KU</pattern>
         <template>
            Grading ion KU is Gpa based.
            At the end of each semester gpa comes.
@@ -49,18 +49,18 @@
 
 <!-- basic_chat.aiml -->
     <category>
-      <pattern>Can we get a room in a Ku hostel?</pattern>
+      <pattern>CAN I GET A ROOM IN KU HOSTEL</pattern>
         <template>
             sure you can but you would rather visit this site for further information
             by clicking this text
-            <a src="http://ku.edu.np/"> </a>
+            <a href="http://ku.edu.np/"> CLICK HERE</a>
         </template>
     </category>
 
 
 
     <category>
-        <pattern>What is the motto of KU?</pattern>
+        <pattern>WHAT IS THE MOTTO OF KU?</pattern>
         <template>
             The motto of Ku is "Quality Education for the leadership"
         </template>
@@ -69,26 +69,26 @@
 
 
   <category>
-        <pattern>where can i read stories about students life in ku?</pattern>
+        <pattern>WHERE CAN I READ STORIES ABOUT STUDENT LIFE IN KU</pattern>
         <template>
-            <a src="http://ku.edu.np/students.php"> You better click me </a>
+            <a href="http://ku.edu.np/students.php"> You better click me </a>
         </template>
     </category>
 
 
 
   <category>
-        <pattern>How is accomodation in KU?</pattern>
+        <pattern>HOW EXPENSIVE *</pattern>
         <template>
-          It is kinda affordable
-          fooding and rents are reasonable and cheap.
+          It is kinda affordable.
+           Tution, fooding and rents are reasonable and cheap.
         </template>
     </category>
 
 
 
 <category>
-        <pattern>is there free wifi in KU for students?</pattern>
+        <pattern>* FREE WIFI</pattern>
         <template>
             of course
             Wifi is free in library.
@@ -97,4 +97,3 @@
     </category>
 
 </aiml>
-

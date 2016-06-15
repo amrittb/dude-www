@@ -13,26 +13,11 @@
     <div id="wrapper">
         <div class="pure-g container">
             <div class="pure-u-1 chat-history">
-                <ol class="chat-history__messages">
-                    <li class="message-box message-box--sent">
-                        <p class="message">
-                            Hi
-                        </p>
-                    </li>
-
-                    <li class="message-box message-box--recieved">
-                        <p class="message">
-                            Hey! So, Ask me something.
-                        </p>
-                    </li>
-                </ol>
+                <chat-history></chat-history>
             </div>
 
             <div class="pure-u-1 chat-container">
-                <form class="pure-form">
-                    <input type="text" placeholder="May be start with a 'Hi'.">
-                    <button type="submit" class="pure-button pure-button-primary">Send</button>
-                </form>
+                <chat-box></chat-box>
             </div>
         </div>
     </div>
