@@ -1,13 +1,10 @@
-<?php namespace App\Http\Controllers;
-
-use Symfony\Component\Console\Application;
-use App\Http\Command\pythonCommand;
+<?php
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
-
+use App\Http\Controllers\fileHandler;
+use App\Http\Controllers\Commander;
+use App\Http\Controllers\Filter;
 
 class HomeController extends Controller
 {
@@ -21,47 +18,32 @@ class HomeController extends Controller
     {
         $question = $request->input('question');
 
-        $txt = "print kernel.respond(\"$question\")";
-        $botfile = file_put_contents('bot.py', $txt . PHP_EOL, FILE_APPEND);
-
-        $process = new Process('python bot.py');
-        $process->run();
 
 
-// executes after the command finishes
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
-        }
+        if(!Filter::spamCheck($question)) {
+            $txt = "print kernel.respond(\"$question\")";
+            if(fileHandler::appendToFile('python/bot.py', $txt)){
 
-        $process->clearErrorOutput();
-        $answer = $process->getOutput();
+                $pycommand = 'python bot.py';
+                $answer = Commander::pythonCommand($pycommand);
 
-        $this->undoChange("bot.py", $txt);
+                fileHandler::undoChange("bot.py", $txt);
 
-        echo $answer;
+                echo $answer;
 
-    }
-
-
-    public function undoChange($filename, $change)
-    {
-        $out = array();
-        $data = file($filename);
-
-        foreach ($data as $line) {
-            if (trim($line) != $change) {
-                $out[] = $line;
+            } else{
+                throwException('file could not be written');
             }
+
+        } else {
+            // spam words found on the input
+            // TODO: store spam to database
+            echo "Please do not use spam words. Be a good guy";
         }
 
-        $fp = fopen($filename, "w+");
-        flock($fp, LOCK_EX);
-        foreach ($out as $line) {
-            fwrite($fp, $line);
-        }
-
-        flock($fp, LOCK_UN);
-        fclose($fp);
     }
+
+
+
 
 }
