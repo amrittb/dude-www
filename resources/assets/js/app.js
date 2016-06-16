@@ -21,7 +21,7 @@ new Vue({
 
         this.$http.post('/ask',{question: message}).then(function(response) {
             console.log(response);
-            if(response.data == "\n") {
+            if(response.data == "\n"  || response.data == "") {
               response.data = "Sorry I cant understand what you are saying.";
             }
             this.$broadcast('AddMessage',response.data,false);

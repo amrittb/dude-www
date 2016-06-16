@@ -18,16 +18,14 @@ class HomeController extends Controller
     {
         $question = $request->input('question');
 
-
-
         if(!Filter::spamCheck($question)) {
             $txt = "print kernel.respond(\"$question\")";
-            if(fileHandler::appendToFile('python/bot.py', $txt)){
+            if(fileHandler::appendToFile('python\bot.py', $txt)){
 
                 $pycommand = 'python bot.py';
                 $answer = Commander::pythonCommand($pycommand);
 
-                fileHandler::undoChange("bot.py", $txt);
+//                fileHandler::undoChange("bot.py", $txt);
 
                 echo $answer;
 
@@ -42,8 +40,5 @@ class HomeController extends Controller
         }
 
     }
-
-
-
 
 }
