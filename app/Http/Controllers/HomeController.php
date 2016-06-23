@@ -1,4 +1,5 @@
-<?php namespace App\Http\Controllers;
+<?php
+namespace App\Http\Controllers;
 
 use Symfony\Component\Console\Application;
 use App\Http\Command\pythonCommand;
@@ -20,6 +21,8 @@ class HomeController extends Controller
     public function ask(Request $request)
     {
         $question = $request->input('question');
+
+
 
         $txt = "print kernel.respond(\"$question\")";
         $botfile = file_put_contents('bot.py', $txt . PHP_EOL, FILE_APPEND);
