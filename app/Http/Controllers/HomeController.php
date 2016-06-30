@@ -22,12 +22,7 @@ class HomeController extends Controller
     {
         $question = $request->input('question');
 
-
-
-        $txt = "print kernel.respond(\"$question\")";
-        $botfile = file_put_contents('bot.py', $txt . PHP_EOL, FILE_APPEND);
-
-        $process = new Process('python bot.py');
+        $process = new Process('./pyRun bot.Bot.ask "' . $question . '"');
         $process->run();
 
 

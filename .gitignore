@@ -5,4 +5,13 @@
 /public/build
 /public/css
 /public/js
+/public/__pycache__
+/public/venv
+/public/aiml-en-us-foundation-alice
+/public/aiml
+/public/bot_brain.brn
+/public/os
+/public/.htaccess
+/public/webpage.html
+/public/*.pyc
 .env
