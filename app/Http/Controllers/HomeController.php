@@ -1,6 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
+use Symfony\Component\Console\Application;
+use App\Http\Command\pythonCommand;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\fileHandler;
 use App\Http\Controllers\Commander;
@@ -17,20 +20,18 @@ class HomeController extends Controller
     public function ask(Request $request)
     {
         $question = $request->input('question');
-
+        $answer = "I do not get it.";
         if(!Filter::spamCheck($question)) {
-            $txt = "print kernel.respond(\"$question\")";
-            if(fileHandler::appendToFile('python\bot.py', $txt)){
 
-                $pycommand = 'python bot.py';
-                $answer = Commander::pythonCommand($pycommand);
+            $process = new Process('./pyRun Bot.Chat.Ask "' . $question . '"');
+            $answer = $process->run();
 
-//                fileHandler::undoChange("bot.py", $txt);
-
-                echo $answer;
-
+            // executes after the command finishes
+            if (!$process->isSuccessful()) {
+              throw new ProcessFailedException($process);
             } else{
-                throwException('file could not be written');
+                echo $answer;
+                return true;
             }
 
         } else {

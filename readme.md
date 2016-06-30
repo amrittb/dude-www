@@ -32,6 +32,12 @@ gulp
 
 Then in the browser, goto [http://localhost](http://localhost) to test the app.
 
+## Running python files
+Executable file pyRun makes it easy to call any method on any py files
+```bash
+./PyRun Filename.ClassName.Method1 Param1 Param2
+```
+
 ## Built With
 
 * [Lumen](https://lumen.laravel.com) - for Backend Framework

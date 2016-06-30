@@ -4,10 +4,10 @@
     <category>
         <pattern>HELLO</pattern>
         <template>
-            Hello there!<br />
+            Hello there!
         </template>
     </category>
-    
+
     <category>
         <pattern>HOW ARE YOU</pattern>
         <template>

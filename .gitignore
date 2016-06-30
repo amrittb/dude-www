@@ -5,4 +5,6 @@
 /public/build
 /public/css
 /public/js
+/public/__pycache__
+/public/venv
 .env
