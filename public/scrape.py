@@ -3,7 +3,7 @@
 
 import  sys, requests, lxml, os
 from bs4 import BeautifulSoup
-
+from selenium import webdriver
 
 def getPage(url):
     if (url):
@@ -13,21 +13,23 @@ def getPage(url):
         try:
             res.raise_for_status()
         except Exception as exc:
-            print('There was a problem: %s' %(exc))
+            error = 'There was a problem: %s' %(exc)
+            return error
 
+        # Write downloaded page in file webpage.html
         webPage = open('webpage.html', 'wb+')
         for chunk in res.iter_content(100000):
             webPage.write(chunk)
         webPage.close
+        return True
 
-        return webPage
     else:
-        return false
+        return False
 
 
 def wikipediaScraper(url):
 
-    if(getPage(url))
+    if getPage(url):
         soup = BeautifulSoup(open("webpage.html",'r'),"lxml")
         title = soup.title.string
 
@@ -40,12 +42,15 @@ def wikipediaScraper(url):
 def googleScraper(searchFor):
 
     # Search google for query
-    if(getPage('https://www.google.com/search/q=' + "_".join(searchFor.split()))):
-
+    # url = 'https://www.google.com/search?q' + '+'.join(searchFor.split())
+    url = 'http://www.google.com'
+    print url
+    driver = webdriver.Firefox()
+    driver.get(url)
+    print driver.page_source
         # See if wikipedia result is present
         # Scrape wikipedia page if found
         # Return google result else
 
-query = "what is a bot"
-googleScraper(query)
-# print wikipediaScraper('https://en.wikipedia.org/wiki/Game_of_Thrones')
+
+print wikipediaScraper('https://en.wikipedia.org/wiki/Game_of_Thrones')
